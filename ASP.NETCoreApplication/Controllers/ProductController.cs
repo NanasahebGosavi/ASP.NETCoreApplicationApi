@@ -16,7 +16,7 @@ namespace ASP.NETCoreApplication.Controllers
 
         public ProductController(IProduct productservice)
         {
-
+            //test code
             _productservice = productservice;
         }
 
@@ -127,7 +127,6 @@ namespace ASP.NETCoreApplication.Controllers
             {
                 return BadRequest(ModelState);
             }
-
 
             await _productservice.UpdateProduct(id, productData);
             return Ok(productData);
