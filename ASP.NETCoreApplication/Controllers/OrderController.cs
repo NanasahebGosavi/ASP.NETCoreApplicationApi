@@ -14,7 +14,11 @@ namespace ASP.NETCoreApplication.Controllers
         {
             return new string[] { "value1", "value2" };
         }
-
+        /// <summary>
+        /// Order controller to manage orders
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         // GET api/<OrderController>/5
         [HttpGet("{id}")]
         public string Get(int id)
