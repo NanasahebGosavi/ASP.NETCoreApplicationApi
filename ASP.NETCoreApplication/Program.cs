@@ -7,6 +7,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using WebApi.Services;
 
+using ASP.NETCoreApplication;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Use the Startup class for configuration 
