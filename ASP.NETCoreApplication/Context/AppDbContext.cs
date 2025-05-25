@@ -14,5 +14,10 @@ namespace ASP.NETCoreApplication.Context
         }
         public DbSet<Product> Products { get; set; }
 
+        public DbSet<User> Users { get; set; }
+
+        public DbSet<Employee> Employees { get; set; }  
+
+
     }
 }

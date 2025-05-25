@@ -6,8 +6,6 @@
         public required string ProductName { get; set; }
         public int ProductCategory { get;set; }
         public double Price { get; set; }
-        public bool IsActive { get; set; }
-
-
+        public bool IsActive { get; set; } 
     }
 }

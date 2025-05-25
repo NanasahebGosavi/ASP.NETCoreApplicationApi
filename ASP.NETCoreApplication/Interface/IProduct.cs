@@ -1,4 +1,5 @@
-﻿using ASP.NETCoreApplication.Entities;
+﻿using ASP.NETCoreApplication.DTO;
+using ASP.NETCoreApplication.Entities;
 
 namespace ASP.NETCoreApplication.Interface
 {
@@ -12,6 +13,8 @@ namespace ASP.NETCoreApplication.Interface
         Task<Product?> GetProductById(int Id);
 
         Task<Product> PartialUpdate(int Id, Product product);
+                        
+        Task<Product> AddProductasync(ProductDto _ProductDto);
 
     }
 }

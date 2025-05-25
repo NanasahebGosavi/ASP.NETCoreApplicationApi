@@ -1,15 +1,16 @@
 ﻿using ASP.NETCoreApplication.Context;
+using ASP.NETCoreApplication.DTO;
 using ASP.NETCoreApplication.Entities;
 using ASP.NETCoreApplication.Interface;
 using Microsoft.EntityFrameworkCore;
 
 namespace ASP.NETCoreApplication.Services
-{
+{   
     public class ProductService : IProduct
     {
         private readonly AppDbContext _context;
         public ProductService(AppDbContext context)
-        {
+        { 
             _context = context;
         }
         public async Task<Product> AddProduct(Product product)
@@ -35,6 +36,8 @@ namespace ASP.NETCoreApplication.Services
 
         public async Task<IEnumerable<Product>> GetAllProduct()
         {
+            var CategoryId = 3;
+            var productwithcat = await _context.Products.FromSqlInterpolated($"EXEC GetProductCategoryId @Category={CategoryId}").ToListAsync();
             return await _context.Products.ToListAsync();
 
         }
@@ -65,12 +68,24 @@ namespace ASP.NETCoreApplication.Services
         }
 
        
-
-        
-
         public async Task<Product?> PartialUpdate(int Id, Product product )
         {
             return await UpdateProduct(Id, product);
         }
+
+
+        public async Task<Product> AddProductasync(ProductDto  _ProductDto)
+        {
+            Product product = new Product
+            {
+                ProductName = _ProductDto.ProductName,
+                Price = _ProductDto.ProductPrice,
+                ProductCategory = _ProductDto.ProductCategory
+            };
+            _context.Products.Add(product);
+            await _context.SaveChangesAsync();
+            return product;
+        }
+
     }
 }
