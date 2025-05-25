@@ -8,6 +8,10 @@ namespace ASP.NETCoreApplication.Controllers
     [ApiController]
     public class OrderController : ControllerBase
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         // GET: api/<OrderController>
         [HttpGet]
         public IEnumerable<string> Get()
