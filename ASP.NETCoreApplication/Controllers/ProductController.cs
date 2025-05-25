@@ -27,10 +27,13 @@ namespace ASP.NETCoreApplication.Controllers
            
 
         }
-      
-       
-        
 
+
+
+        /// <summary>
+        /// Get Product List API
+        /// </summary>
+        /// <returns></returns>
         // GET: api/<ProductController>
         [HttpGet("GetAllProduct")]
         public async Task<IActionResult> GetAllProduct()
