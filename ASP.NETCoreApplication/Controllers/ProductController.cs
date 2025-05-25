@@ -31,7 +31,7 @@ namespace ASP.NETCoreApplication.Controllers
        
         
         /// <summary>
-        /// Get API Method for All Products
+        /// Get API Method for All Products fomr DB
         /// </summary>
         /// <returns></returns>
         // GET: api/<ProductController>
