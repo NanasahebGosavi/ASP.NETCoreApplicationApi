@@ -14,6 +14,9 @@ namespace ASP.NETCoreApplication.Controllers
     [Authorize]
     public class ProductController : ControllerBase
     {
+        /// <summary>
+        /// private variables
+        /// </summary>
         private readonly IProduct _productservice;
     
 
